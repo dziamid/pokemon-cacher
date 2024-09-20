@@ -5,14 +5,12 @@ services:
       target: prod
     command: node src/index.js
     depends_on:
-      - db
+      - redis
     environment:
       - NODE_ENV=production
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=${REDIS_PORT}
-      - REDIS_USERNAME=${REDIS_USERNAME}
-      - REDIS_PASSWORD=${REDIS_PASSWORD}
-  db:
-    image: redis:7.2.4
     ports:
-      - 6379:6379
+      - 5001:5001
+  redis:
+    image: redis:7.2.4

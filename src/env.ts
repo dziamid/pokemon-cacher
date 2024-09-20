@@ -1,12 +1,12 @@
-import { config } from 'dotenv';
-import { ZodError, z } from 'zod';
+import {config} from 'dotenv';
+import {z, ZodError} from 'zod';
 
 const EnvSchema = z.object({
   NODE_ENV: z.string().default('development'),
   REDIS_HOST: z.string(),
   REDIS_PORT: z.coerce.number(),
-  REDIS_USERNAME: z.string(),
-  REDIS_PASSWORD: z.string(),
+  // REDIS_USERNAME: z.string(),
+  // REDIS_PASSWORD: z.string(),
 });
 
 export type EnvSchema = z.infer<typeof EnvSchema>;

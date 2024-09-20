@@ -7,8 +7,8 @@ const router = express.Router();
 const redis = new Redis({
   port: env.REDIS_PORT,
   host: env.REDIS_HOST,
-  username: env.REDIS_USERNAME,
-  password: env.REDIS_PASSWORD,
+  // username: env.REDIS_USERNAME,
+  // password: env.REDIS_PASSWORD,
 });
 
 router.get<{ pokemon_name: string }>(
