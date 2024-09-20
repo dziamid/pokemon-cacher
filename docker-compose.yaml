@@ -12,5 +12,7 @@ services:
       - REDIS_PORT=${REDIS_PORT}
     ports:
       - 5001:5001
+    labels:
+      - "caddy_0.basicauth.0_admin=$2a$14$fyyAyWWpUusnCAdTFvHefOKdRcd4fC6dtoD9bnmHsmdQ3r04HqqZG"
   redis:
     image: redis:7.2.4
